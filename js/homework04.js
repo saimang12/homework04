@@ -1,6 +1,6 @@
 $(function () {
     $('.arrow').click(function () {
-        $('html, body').animate({ scrollTop: $(this.hash).offset.top }, 3000);
+        $('html, body').animate({ scrollTop: 800 }, 500);
     });
 });
 
@@ -25,8 +25,10 @@ $('.family_site').click(function () {
 });
 
 
-$('.move_top').click(function () {
+// $('.move_top').click(function () {
 
-})
+// });
+
+
 
 

@@ -1,3 +1,5 @@
+.Wrap {}
+
 .news {
     position: fixed;
     top: -70px;
@@ -185,14 +187,14 @@
 .mainVisual {}
 
 .mainVisual .video_box {
-    width: 100%;
     height: 100vh;
     position: relative;
 }
 
 .mainVisual video {
     position: absolute;
-    width: 100vw;
+    width: 100%;
+    min-width: 1200px;
     height: 100vh;
     object-fit: cover;
 }
@@ -254,69 +256,86 @@
     font-size: 40px;
 }
 
-#mainContents {
+
+
+
+
+
+
+
+
+.mainContents {
     padding: 100px 0;
 }
 
-#mainContents .inner {
+.mainContents .inner {
     width: 1200px;
     margin: 0 auto;
-    padding: 0 0 100px 0;
+    text-align: center;
 }
 
-#mainContents .inner h2 {
+.mainContents h2 {
     font-size: 35px;
     font-weight: 500;
     margin: 0 0 20px 0;
-    text-align: center;
 }
 
-#mainContents .inner p {
-    margin: 0 0 50px 0;
-    text-align: center;
+.mainContents p {
     line-height: 26px;
+    margin: 0 0 50px 0;
 }
 
-#mainContents .inner .mainConbox {
+.mainContents .mainConbox {
     display: flex;
-    width: 100%;
-    height: 200px;
-    text-align: center;
     border-left: 2px solid #ddd;
     border-right: 2px solid #ddd;
 }
 
-#mainContents .inner .mainConbox li {
-    position: relative;
+.mainContents .mainConbox li {
     flex: 1;
 }
 
-#mainContents .inner .mainConbox li~li {
+.mainContents .mainConbox li~li {
     border-left: 2px solid #ddd;
 }
 
-#mainContents .mainConbox li span {
-    line-height: 20px;
+.mainContents .mainConbox h3 {
+    font-size: 18px;
+    padding: 5px 0 0 0;
+    margin: 0 0 20px 0;
 }
 
-#mainContents .mainConbox li img {
+.mainContents .mainConbox figure {
+    margin: 0 0 30px 0;
+}
+
+.mainContents .mainConbox .case {
+    position: relative;
+}
+
+.mainContents .mainConbox .sub_case {
     position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -10%);
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
 }
 
-#mainContents .mainConbox li .desc {
-    position: absolute;
-    bottom: -140px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    display: flex;
+.mainContents .mainConbox strong {
+    font-size: 25px;
+    font-weight: 500;
 }
 
-#mainContents .mainConbox li .desc strong {
-    font-size: 30px;
+.mainContents .mainConbox strong>span {
+    font-size: 15px;
+    font-weight: 400;
 }
+
+
+
+
+
+
+
+
 
 .newsTap {
     padding: 100px 0;
@@ -338,6 +357,7 @@
 .newsTap .inner .news_box {
     display: flex;
     gap: 30px;
+    border-left: 2px solid #ddd;
 }
 
 .newsTap .inner .news_box li {
@@ -379,6 +399,14 @@
     line-height: 24px;
     word-break: keep-all;
 }
+
+
+
+
+
+
+
+
 
 .iconTap {
     background: url(../img03/icontap_bg.png) repeat-x center bottom/contain

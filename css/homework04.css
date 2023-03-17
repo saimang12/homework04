@@ -1,4 +1,6 @@
-.Wrap {}
+.Wrap {
+    position: relative;
+}
 
 .news {
     position: fixed;
@@ -130,7 +132,7 @@
 
 .header.on {
     background: #fff;
-    box-shadow: 10px 5px 15px 1px rgb(0 0 0 / 30%);
+    box-shadow: 0 0 1px 0 #000;
 }
 
 .header .inner {
@@ -228,7 +230,7 @@
 
     .header.on {
         position: fixed;
-        box-shadow: 10px 5px 15px 1px rgb(0 0 0 / 30%);
+        box-shadow: 0 0 1px 0 #000;
     }
 
     .header .inner {
@@ -248,6 +250,18 @@
         height: 40px;
     }
 
+    .cover {
+        position: absolute;
+        inset: 70px 0 0 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+    }
+
+    .cover.on {
+        display: block;
+    }
+
     .header .gnb {
         position: fixed;
         inset: 70px auto 0 -100%;
@@ -256,19 +270,11 @@
         background: #fff;
         z-index: 999;
         border-top: 1px solid #000;
-    }
-
-    .header .gnb::before {
-        content: "";
-        position: absolute;
-        inset: 0 -90px 0 auto;
-        width: 90px;
-        background: rgba(0, 0, 0, 0.5);
+        transition: 0.3s;
     }
 
     .header .gnb.on {
         left: 0;
-        transition: 0.3s;
     }
 
     .header .gnb>ul:hover::after {

@@ -162,7 +162,7 @@
     right: 0;
     height: 200px;
     background: rgba(255, 255, 255, 0.7);
-    border-top: 1px solid #333;
+    border-top: 1px solid #c1c1c1;
     transition: 0.5s;
 }
 
@@ -992,7 +992,7 @@
     .mainIntro .figure_box figure span {
         display: block;
         font-size: 13px;
-        text-align: right;
+        text-align: center;
     }
 }
 
@@ -1284,14 +1284,28 @@
     margin: 0 0 40px 0;
 }
 
+.foot_center .info .foot_desc {
+    font-size: 14px;
+    margin: 0 0 30px 0;
+}
+
 .foot_center .info address {
     font-size: 14px;
     margin: 0 0 10px 0;
 }
 
+.foot_center .foot_desc em {
+    display: block;
+    margin: 0 0 10px 0;
+}
+
+.foot_center .foot_desc span {
+    display: block;
+    margin: 0 0 10px 0;
+}
+
 .foot_center .info p {
     font-size: 14px;
-    margin: 0 0 30px 0;
 }
 
 .foot_center .social {
@@ -1371,17 +1385,10 @@
     }
 
     .footer .foot_top .foot_link {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: ". . ."
-            ". . ."
-            ". family .";
+        display: flex;
+        flex-direction: column;
         text-align: center;
         gap: 15px;
-    }
-
-    .family_site {
-        grid-area: family;
     }
 
     .footer .foot_top .foot_link>li~li::before {
@@ -1404,15 +1411,29 @@
         line-height: 13px;
     }
 
-    .foot_center .info address {
+    .foot_center .foot_desc {
+        margin: 0 0 30px 0;
+    }
+
+    .foot_center address {
         font-size: 13px;
-        line-height: 21px;
         margin: 0 0 10px 0;
     }
 
-    .foot_center .info p {
+    .foot_center .foot_desc em {
         font-size: 13px;
-        margin: 0 0 30px 0;
+        display: block;
+        margin: 0 0 10px 0;
+    }
+
+    .foot_center .foot_desc span {
+        font-size: 13px;
+        display: block;
+        margin: 0 0 10px 0;
+    }
+
+    .foot_center .foot_desc p {
+        font-size: 13px;
     }
 
     .foot_bottom ul {
@@ -1433,7 +1454,7 @@
     }
 }
 
-@media (max-width:535px) {
+/* @media (max-width:535px) {
     .footer .foot_top .foot_link {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1444,4 +1465,4 @@
         text-align: center;
         gap: 15px;
     }
-}
+} */

@@ -221,15 +221,14 @@
 
 @media (max-width:768px) {
     .header {
-        line-height: 70px;
         position: unset;
         background: #fff;
         transition: none;
-        border-bottom: 1px solid #333;
     }
 
     .header.on {
-        box-shadow: 0 0 0 0;
+        position: fixed;
+        box-shadow: 10px 5px 15px 1px rgb(0 0 0 / 30%);
     }
 
     .header .inner {
@@ -251,11 +250,12 @@
 
     .header .gnb {
         position: fixed;
-        inset: 71px auto 0 -100%;
+        inset: 70px auto 0 -100%;
         width: calc(100% - 90px);
         margin: auto auto auto auto;
         background: #fff;
         z-index: 999;
+        border-top: 1px solid #000;
     }
 
     .header .gnb::before {
@@ -515,8 +515,8 @@
 
 .mainContents .mainConbox {
     display: flex;
-    border-left: 2px solid #ddd;
-    border-right: 2px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 
 .mainContents .mainConbox li {
@@ -524,7 +524,7 @@
 }
 
 .mainContents .mainConbox li~li {
-    border-left: 2px solid #ddd;
+    border-left: 1px solid #ddd;
 }
 
 .mainContents .mainConbox h3 {
@@ -572,10 +572,10 @@
     }
 
     .mainContents h2 {
-        font-size: 1.3rem;
+        font-size: 35px;
         font-weight: 500;
-        margin: 0 0 10px 0;
-        line-height: 25px;
+        margin: 0 0 20px 0;
+        line-height: 43px;
     }
 
     .mainContents p {
@@ -586,18 +586,35 @@
     }
 
     .mainContents .mainConbox {
+        position: relative;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         border-left: none;
         border-right: none;
     }
 
-    .mainContents .mainConbox li~li {
-        border-left: none;
+    .mainContents .mainConbox::before {
+        content: "";
+        position: absolute;
+        inset: 50% auto auto 0;
+        transform: translate(0, -50%);
+        width: 100%;
+        height: 1px;
+        background: #ddd;
     }
 
-    .mainContents .mainConbox li:nth-child(even) {
-        border-left: 1px solid #ddd;
+    .mainContents .mainConbox::after {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 50%;
+        transform: translate(-50%, 0);
+        width: 1px;
+        height: 100%;
+        background: #ddd;
+    }
+
+    .mainContents .mainConbox li~li {
+        border-left: none;
     }
 
     .mainContents .mainConbox h3 {
@@ -714,16 +731,11 @@
 
 
 @media (max-width:768px) {
-    .newsTap {
-        padding: 100px 0;
-        background: #f9f9f9;
-    }
+
 
     .newsTap .inner {
         width: auto;
-        margin: 0 auto;
         padding: 0 15px;
-        word-break: keep-all;
     }
 
     .newsTap .inner h2 {
@@ -734,56 +746,71 @@
     }
 
     .newsTap .inner .news_box {
+        position: relative;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 50px 30px;
+        gap: 50px 15px;
         border-left: none;
         border-right: none;
     }
 
-    .newsTap .inner .news_box li {
-        position: relative;
-        /* border-left: 1px solid #ddd;
-        border-right: 1px solid #ddd; */
-    }
-
-    .newsTap .inner .news_box li~li::before {
+    .newsTap .inner .news_box::before {
         content: "";
         position: absolute;
-        left: -16px;
-        transform: translate(50%, 0);
+        inset: 50% auto auto 0;
+        transform: translate(0, -50%);
+        width: 100%;
+        height: 1px;
+        background: #ddd;
+    }
+
+    .newsTap .inner .news_box::after {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 50%;
+        transform: translate(-50%, 0);
         width: 1px;
         height: 100%;
         background: #ddd;
     }
 
-    .newsTap .inner .news_box li a {
-        display: block;
-        padding: 0 15px
+    .newsTap .inner .news_box li {
+        position: relative;
     }
 
-    .newsTap .news_box li span {
-        display: block;
-        font-size: 13px;
-        padding: 5px 0 0 0;
-        margin: 0 0 30px 0;
+    .newsTap .inner .news_box li~li::before {
+        display: none;
     }
 
     .newsTap .news_box li strong {
         display: block;
         font-size: 1.1rem;
-        height: 100px;
-
+        height: 90px;
+        overflow: hidden;
+        white-space: normal;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
         margin: 0 0 30px 0;
         line-height: 30px;
+
     }
 
     .newsTap .news_box li .desc p {
         font-size: 0.9rem;
         line-height: 24px;
-        height: 80px;
+        height: 70px;
+        overflow: hidden;
+        white-space: normal;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
     }
 }
+
+
 
 
 
@@ -829,6 +856,39 @@
 
 
 
+@media (max-width:768px) {
+    .iconTap {
+        background: url(../img03/icontap_bg.png) repeat-x center bottom/cover;
+    }
+
+    .iconTap .inner {
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .iconTap .inner .icon_box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .iconTap .icon_box li figure {
+        margin: 0 auto 15px auto;
+    }
+
+    .iconTap .icon_box li span {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 .mainIntro {
     padding: 100px 0;
 }
@@ -849,12 +909,13 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+
 }
 
 .mainIntro .figure_box figure img {
     width: 100%;
     height: 300px;
-    margin: 0 0 40px 0;
+    margin: 0 0 30px 0;
 }
 
 .mainIntro .figure_box figure h3 {
@@ -872,6 +933,75 @@
 .mainIntro .figure_box figure span {
     font-size: 13px;
 }
+
+
+
+
+@media (max-width:768px) {
+    .mainIntro .inner {
+        width: auto;
+        padding: 0 15px;
+    }
+
+    .mainIntro .inner h2 {
+        font-size: 35px;
+        margin: 0 0 50px 0;
+    }
+
+    .mainIntro .figure_box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px;
+    }
+
+    .mainIntro .figure_box figure {
+        background: #f8f6f6;
+    }
+
+    .mainIntro .figure_box figure img {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        margin: 0 0 30px 0;
+    }
+
+    .mainIntro .figure_box figure .desc {
+        padding: 0 15px 15px 15px;
+    }
+
+    .mainIntro .figure_box figure h3 {
+        font-size: 1.125rem;
+        line-height: 1.6rem;
+        margin: 0 0 15px 0;
+        text-align: center;
+    }
+
+    .mainIntro .figure_box figure p {
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+        margin: 0 0 30px 0;
+        text-align: center;
+    }
+
+    .mainIntro .figure_box figure span {
+        display: block;
+        font-size: 13px;
+        text-align: right;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -944,6 +1074,102 @@
 .mainDown ul>li .text span {
     font-size: 14px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:768px) {
+
+    .mainDown .inner {
+        width: auto;
+        padding: 0 15px;
+    }
+
+    .mainDown h2 {
+        margin: 0 0 10px 0;
+    }
+
+    .mainDown p {
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+    }
+
+    .mainDown ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .mainDown ul>li a {
+        padding: 15px;
+    }
+
+    .mainDown ul>li figure {
+        flex: 4;
+    }
+
+    .mainDown ul>li figure img {
+        padding: 15px;
+    }
+
+    .mainDown ul>li .text {
+        flex: 6;
+    }
+
+    .mainDown ul>li .text strong {
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin: 0 0 20px 0;
+    }
+
+    .mainDown ul>li .text span {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+@media (max-width:481px) {
+
+    .mainDown ul {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .mainDown ul>li figure {
+        flex: 3;
+    }
+
+    .mainDown ul>li figure img {
+        padding: 15px;
+    }
+
+    .mainDown ul>li .text {
+        flex: 7;
+    }
+
+    .mainDown ul>li .text strong {
+        font-size: 1.1rem;
+    }
+
+    .mainDown ul>li .text span {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -1106,4 +1332,108 @@
     font-size: 14px;
     line-height: 22px;
     word-break: keep-all;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:768px) {
+    .footer {
+        padding: 80px 0 60px 0;
+    }
+
+    .footer .inner {
+        width: auto;
+        padding: 0 15px;
+    }
+
+    .footer .foot_top .foot_link {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: ". . ."
+            ". . ."
+            ". family .";
+        text-align: center;
+        gap: 15px;
+    }
+
+    .family_site {
+        grid-area: family;
+    }
+
+    .footer .foot_top .foot_link>li~li::before {
+        display: none;
+    }
+
+    .footer .foot_top .foot_link>li a {
+        display: inline-block;
+    }
+
+    .footer .foot_top .family_link ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px 20px;
+    }
+
+    .footer .foot_top .family_link ul li {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 13px;
+    }
+
+    .foot_center .info address {
+        font-size: 13px;
+        line-height: 21px;
+        margin: 0 0 10px 0;
+    }
+
+    .foot_center .info p {
+        font-size: 13px;
+        margin: 0 0 30px 0;
+    }
+
+    .foot_bottom ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .foot_bottom ul li {
+        width: auto;
+    }
+
+    .foot_bottom ul li span {
+        font-size: 13px;
+        line-height: 21px;
+    }
+}
+
+@media (max-width:535px) {
+    .footer .foot_top .foot_link {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: ". ."
+            ". ."
+            ". ."
+            "family . ";
+        text-align: center;
+        gap: 15px;
+    }
 }

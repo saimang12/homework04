@@ -91,32 +91,6 @@
 
 
 
-.toTop {
-    position: fixed;
-    inset: auto 50px 50px auto;
-    z-index: 999;
-}
-
-.toTop a i {
-    display: block;
-    font-size: 25px;
-    padding: 10px;
-    background: green;
-    color: #ddd;
-}
-
-@media (max-width:768px) {
-    .toTop {
-        inset: auto 30px 30px auto;
-    }
-
-    .toTop a i {
-        font-size: 20px;
-        padding: 7px;
-    }
-}
-
-
 
 
 .header {
@@ -1369,14 +1343,6 @@
 
 
 
-
-
-
-
-
-
-
-
 @media (max-width:768px) {
     .footer {
         padding: 80px 0 60px 0;
@@ -1457,15 +1423,36 @@
     }
 }
 
-/* @media (max-width:535px) {
-    .footer .foot_top .foot_link {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: ". ."
-            ". ."
-            ". ."
-            "family . ";
-        text-align: center;
-        gap: 15px;
+
+.toTop {
+    position: fixed;
+    inset: auto 50px 50px auto;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.toTop a i {
+    display: block;
+    font-size: 25px;
+    padding: 10px;
+    background: green;
+    color: #ddd;
+}
+
+.toTop.on {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width:768px) {
+    .toTop {
+        inset: auto 30px 30px auto;
     }
-} */
+
+    .toTop a i {
+        font-size: 20px;
+        padding: 7px;
+    }
+}

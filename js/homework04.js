@@ -45,6 +45,15 @@ $(function () {
         $('.family_link').toggleClass("on");
     });
 
+
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 500) {
+            $('.toTop').addClass('on')
+        } else {
+            $('.toTop').removeClass('on')
+        }
+    })
+
     $('.toTop').on('click', function (e) {
         e.preventDefault();
         $('html, body').animate({ scrollTop: 0 }, 500);

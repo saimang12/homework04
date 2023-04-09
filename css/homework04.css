@@ -255,11 +255,14 @@
         inset: 70px 0 0 0;
         background: rgba(0, 0, 0, 0.5);
         z-index: 999;
-        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
     }
 
     .cover.on {
-        display: block;
+        opacity: 1;
+        visibility: visible;
     }
 
     .header .gnb {
@@ -269,8 +272,8 @@
         margin: auto auto auto auto;
         background: #fff;
         z-index: 999;
-        border-top: 1px solid #000;
-        transition: 0.3s;
+        border-top: 1px solid #e3e3e3;
+        transition: 0.5s;
     }
 
     .header .gnb.on {
@@ -289,7 +292,7 @@
         position: relative;
         line-height: 40px;
         padding: 0 15px;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid #e3e3e3;
     }
 
     .header .gnb>ul>li>a {
